@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/btn_dynamic_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dynamic Map"
+        android:layout_gravity="start"
+        />
+
+    <Button
+        android:id="@+id/btn_street_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Street View Map"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="start"/>
+
+    <Button
+        android:id="@+id/btn_place_autocomplete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Place autocomplete"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="start"/>
+
+    <Button
+        android:id="@+id/btn_place_nearby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Place nearby"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="start"/>
+
+    <Button
+        android:id="@+id/btn_place_textsearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Place text search"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="start"/>
+
+    <Button
+        android:id="@+id/btn_place_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Place details"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="start"/>
+
+    <Button
+        android:id="@+id/btn_place_photos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Place photos"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="start"/>
+
+    <Button
+        android:id="@+id/btn_place_SAR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Place SAR"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="start"/>
+
+
+
+
+</LinearLayout>

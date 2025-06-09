@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">maps-demos</string>
+    <string name="main_title">Google maps APIs demos</string>
+    <string name="place_photo">Photo of the place</string>
+
+
+</resources>
