@@ -11,13 +11,13 @@ This project showcases a few **Google Maps Platform APIs** demos in Android.
 |----------|-------------|-----------|
 | `DynamicMapActivity.kt` | Displays a dynamic, interactive map with gestures and camera control. | Maps SDK |
 | `StreetViewActivity.kt` | Map + street view panorama that updates on map click. | Maps SDK, Street View |
-| `PlaceAutocompleteActivity.kt` | Autocomplete widget to search places. | Places API, Places UI |
+| `PlaceAutocompleteActivity.kt` | Autocomplete widget to search places. | Places API Legacy |
 | `PlacesUIKitActivity.kt` |  **Places UI Kit** integration with Search and Details components. | Places API (UI Kit) |
-| `PlaceNearbyActivity.kt` | Search for nearby places. | Places API (Nearby Search) |
-| `PlaceTextSearchActivity.kt` | Search for places from text input. | Places API (Text Search) |
-| `PlaceSARActivity.kt` | **Search Along Route** to find places near a defined path. | Places API (Search Along Route) |
-| `PlacePhotosActivity.kt` | Fetches and displays photos associated with a place. | Places API (Photos) |
-| `PlaceDetailsActivity.kt` | Retrieves full place details from a Place ID. | Places API (Details) |
+| `PlaceNearbyActivity.kt` | Search for nearby places. | Places API (New) (Nearby Search) |
+| `PlaceTextSearchActivity.kt` | Search for places from text input. | Places API (New) (Text Search) |
+| `PlaceSARActivity.kt` | **Search Along Route** to find places near a defined path. | Places API (New) (Search Along Route) |
+| `PlacePhotosActivity.kt` | Fetches and displays photos associated with a place. | Places API (New) (Photos) |
+| `PlaceDetailsActivity.kt` | Retrieves full place details from a Place ID. | Places API (New) (Details) |
 
 ---
 
