@@ -9,6 +9,11 @@ android {
     namespace = "com.example.maps_demos"
     compileSdk = 35
 
+    buildFeatures {
+        viewBinding =  true
+    }
+
+
     defaultConfig {
         applicationId = "com.example.maps_demos"
         minSdk = 24
@@ -22,6 +27,8 @@ android {
     buildFeatures {
         buildConfig = true
     }
+
+
 
     buildTypes {
         release {
@@ -41,6 +48,8 @@ android {
     }
 }
 
+
+
 dependencies {
     // Google Maps SDK for Android - displays interactive maps
     implementation("com.google.android.gms:play-services-maps:19.0.0")
@@ -55,7 +64,7 @@ dependencies {
     implementation("com.google.maps.android:android-maps-utils:3.8.0")
 
     // Places SDK for Android - enables features like place autocomplete, fetching place details, and Search Along Route (SAR) requests
-    implementation("com.google.android.libraries.places:places:4.1.0")
+    implementation("com.google.android.libraries.places:places:4.4.1")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

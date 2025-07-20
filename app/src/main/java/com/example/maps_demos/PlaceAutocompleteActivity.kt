@@ -33,20 +33,15 @@ class PlaceAutocompleteActivity : AppCompatActivity(), OnMapReadyCallback {
             .findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
 
-        // Define a variable to hold the Places API key.
         val apiKey = BuildConfig.PLACES_API_KEY
 
-        // Log an error if apiKey is not set.
         if (apiKey.isEmpty() || apiKey == "DEFAULT_API_KEY") {
             Log.e("Places test", "No api key")
             finish()
             return
         }
 
-        // Initialize the SDK
         Places.initialize(applicationContext, apiKey)
-
-        // Specify the fields to return
         val placeFields = listOf(Place.Field.ID, Place.Field.NAME, Place.Field.LAT_LNG)
 
         val autocompleteFragment =
@@ -63,7 +58,7 @@ class PlaceAutocompleteActivity : AppCompatActivity(), OnMapReadyCallback {
                     currentMarker = googleMap.addMarker(
                         MarkerOptions()
                             .position(placeLatLng)
-                            .title(place.name)
+                            .title(place.displayName)
                     )
                     googleMap.moveCamera(CameraUpdateFactory.newLatLng(placeLatLng))
                 }

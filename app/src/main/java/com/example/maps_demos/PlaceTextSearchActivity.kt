@@ -20,13 +20,11 @@ class PlaceTextSearchActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var googleMap: GoogleMap
     private lateinit var placesClient: com.google.android.libraries.places.api.net.PlacesClient
 
-    // Define the search area boundaries
     private val southWest = LatLng(37.38816277477739, -122.08813770258874)
     private val northEast = LatLng(37.39580487866437, -122.07702325966572)
 
     private val textQuery = "Tesla charger station"
 
-    // Define the fields we want to retrieve for each place
     private val placeFields = listOf(Place.Field.ID, Place.Field.NAME, Place.Field.LAT_LNG)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,25 +32,19 @@ class PlaceTextSearchActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(R.layout.activity_place_text_search)
 
         supportActionBar?.title = "Place Text Search"
-
-
         placesClient = (application as PlaceClient).placesClient
 
-
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
     }
 
     private fun searchTextRequest() {
-        // Create the text search request
         val searchByTextRequest = SearchByTextRequest.builder(textQuery, placeFields)
             .setMaxResultCount(10)
             .setLocationRestriction(RectangularBounds.newInstance(southWest, northEast))
             .build()
 
-        // Execute the search request
         placesClient.searchByText(searchByTextRequest)
             .addOnSuccessListener { response: SearchByTextResponse ->
                 val places = response.places
@@ -74,12 +66,12 @@ class PlaceTextSearchActivity : AppCompatActivity(), OnMapReadyCallback {
         places.forEach { place ->
             Log.d(
                 "TextSearchPlaces",
-                "Place ID: ${place.id}, Name: ${place.name}, Location: ${place.latLng?.latitude}, ${place.latLng?.longitude}"
+                "Place ID: ${place.id}, Name: ${place.displayName}, Location: ${place.location?.latitude}, ${place.location?.longitude}"
             )
-            place.latLng?.let { latLng ->
+            place.location?.let { latLng ->
                 val markerOptions = MarkerOptions()
                     .position(latLng)
-                    .title(place.name)
+                    .title(place.displayName)
                     .snippet(place.id)
                 googleMap.addMarker(markerOptions)
             }

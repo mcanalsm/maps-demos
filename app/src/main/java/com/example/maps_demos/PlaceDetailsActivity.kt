@@ -21,7 +21,6 @@ class PlaceDetailsActivity : AppCompatActivity() {
 
         val placeId = "ChIJk_s92NyipBIRUMnDG8Kq2Js"
 
-        // Fields you want to retrieve
         val placeFields = listOf(
             Place.Field.ID,
             Place.Field.DISPLAY_NAME,

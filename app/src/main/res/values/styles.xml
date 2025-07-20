@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomizedPlaceDetailsTheme" parent="PlacesMaterialTheme">
+        <item name="placesColorPrimary">@color/app_primary_color</item>
+        <item name="placesColorSurface">@color/app_color_surface</item>
+        <item name="placesColorOnSurface">@color/app_color_on_surface</item>
+        <item name="placesColorOnSurfaceVariant">@color/app_color_on_surface</item>
+
+        <item name="placesCornerRadius">20dp</item>
+    </style>
+</resources>

@@ -2,6 +2,7 @@
     <string name="app_name">maps-demos</string>
     <string name="main_title">Google maps APIs demos</string>
     <string name="place_photo">Photo of the place</string>
+    <string name="button_to_close_the_place_window">button to close the place window</string>
 
 
 </resources>

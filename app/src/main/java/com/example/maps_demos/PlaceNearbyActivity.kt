@@ -30,7 +30,6 @@ class PlaceNearbyActivity : AppCompatActivity(),  OnMapReadyCallback  {
 
     supportActionBar?.title = "Place Nearby"
 
-    // Create a new PlacesClient instance.
     placesClient = (application as PlaceClient).placesClient
 
 
@@ -42,27 +41,21 @@ class PlaceNearbyActivity : AppCompatActivity(),  OnMapReadyCallback  {
 
     private fun nearbyTextRequest() {
 
-    // Specify the fields to return
     val placeFields = listOf(Place.Field.ID, Place.Field.NAME, Place.Field.LAT_LNG)
 
-    // Define the search area
     val center = LatLng(40.7580, -73.9855)
     val circle = CircularBounds.newInstance(center, /* radius = */ 1000.0)
 
-    // Define the search criteria
     val includedTypes = listOf("restaurant", "cafe")
     val excludedTypes = listOf("pizza_restaurant", "american_restaurant")
     val maxSearchResults = 10
 
-    // Use the builder to create a SearchNearbyRequest object.
     val searchNearbyRequest = SearchNearbyRequest.builder(circle, placeFields)
         .setIncludedTypes(includedTypes)
         .setExcludedTypes(excludedTypes)
         .setMaxResultCount(maxSearchResults)
         .build()
 
-    // Call placesClient.searchNearby() to perform the search.
-    // Define a response handler to process the returned List of Place objects.
 
     placesClient.searchNearby(searchNearbyRequest)
         .addOnSuccessListener { response ->
@@ -122,7 +115,6 @@ class PlaceNearbyActivity : AppCompatActivity(),  OnMapReadyCallback  {
         googleMap = map
         Log.i("onMapReady", "Map loaded")
 
-        // Perform the nearby search request.
         nearbyTextRequest()
     }
 

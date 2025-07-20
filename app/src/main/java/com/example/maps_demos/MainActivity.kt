@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         val btnPlaceDetails = findViewById<Button>(R.id.btn_place_details)
         val btnPlacePhotos = findViewById<Button>(R.id.btn_place_photos)
         val btnPlaceSAR = findViewById<Button>(R.id.btn_place_SAR)
+        val btnPlacesUIkit = findViewById<Button>(R.id.btn_places_UIkit)
+
 
 
         btnDynamicMap.setOnClickListener {
@@ -52,6 +54,11 @@ class MainActivity : AppCompatActivity() {
         btnPlaceSAR.setOnClickListener {
             startActivity(Intent(this, PlaceSARActivity::class.java))
         }
+
+        btnPlacesUIkit.setOnClickListener {
+            startActivity(Intent(this, PlacesUIKitActivity::class.java))
+        }
+
 
 
 
