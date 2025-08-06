@@ -26,9 +26,7 @@ class PlaceSARActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_place_sar)
 
-        supportActionBar?.hide()
-
-            //   supportActionBar?.title = "Places SAR"
+        supportActionBar?.title = "Places SAR"
 
 
         placesClient = (application as PlaceClient).placesClient
