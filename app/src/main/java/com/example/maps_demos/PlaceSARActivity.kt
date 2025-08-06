@@ -7,6 +7,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PolylineOptions
@@ -25,7 +26,9 @@ class PlaceSARActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_place_sar)
 
-        supportActionBar?.title = "Place SAR"
+        supportActionBar?.hide()
+
+            //   supportActionBar?.title = "Places SAR"
 
 
         placesClient = (application as PlaceClient).placesClient
@@ -102,16 +105,31 @@ class PlaceSARActivity : AppCompatActivity(), OnMapReadyCallback {
 
             googleMap.addPolyline(polylineOptions)
 
+
+
         }
     }
 
     private fun moveCamera(latLng: LatLng) {
-        val cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 10f)
+        val cameraPosition = CameraPosition.Builder()
+            .target(latLng)
+            .zoom(10f)
+            .build()
+
+        val cameraUpdate = CameraUpdateFactory.newCameraPosition(cameraPosition)
         googleMap.animateCamera(cameraUpdate)
     }
 
     override fun onMapReady(map: GoogleMap) {
         googleMap = map
+
+        googleMap.uiSettings.apply {
+            isZoomControlsEnabled = true
+            isCompassEnabled = true
+            isMyLocationButtonEnabled = true
+            isRotateGesturesEnabled = true
+        }
+
         Log.i("onMapReady", "Map loaded")
         searchAlongRouteRequest()
     }
